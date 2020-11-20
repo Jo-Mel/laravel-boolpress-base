@@ -11,6 +11,11 @@
     <li>
     <a href="{{ route('users.show', $user->id)}}">Dettagli</a></li>
  </ul>
+<form action="{{ route('users.destroy', $user->id) }}" method="post">
+    @csrf
+    @method('DELETE')
+    <input type="submit" value="Cancella utente">
+</form>
  <h3>Post che ha scritto</h3>
  @foreach ($user->posts as $post)
  <div>
